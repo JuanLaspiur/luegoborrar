@@ -13,6 +13,7 @@ const logo = readFileSync(logoPath, 'utf-8');
 
 module.exports = {
   invitationPost: async (req = request, res = response) => {
+    console.log("ENTRE");
     const { name, lastname, email, event } = req.body;
 
     try {
@@ -47,7 +48,8 @@ module.exports = {
     } catch (error) {
       return httpHandler(error, res);
     }
-  },
+  }
+,
   invitationMasivePost: async (req = request, res) => {
     const { id: event } = req.params;
     try {
